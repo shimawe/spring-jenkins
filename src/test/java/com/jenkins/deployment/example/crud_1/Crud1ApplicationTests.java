@@ -12,7 +12,7 @@ class Crud1ApplicationTests {
 
     @Test
     void contextLoads() {
-        log.info("Test case executing with new JENKINS BUILD!!!");
+        log.info("Test case executing with new PIPELINE");
         assertThat(true).isTrue();
     }
 }
