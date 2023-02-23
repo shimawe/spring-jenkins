@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class Crud1ApplicationTests {
 
     @Test
-     contextLoads() {
+    void contextLoads() {
         log.info("Test case executing with new PIPELINE");
         assertThat(true).isTrue();
     }
