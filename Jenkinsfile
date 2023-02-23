@@ -28,5 +28,21 @@ pipeline {
                 }
             }
         }
+        stage('Deploy to k8s') {
+            steps {
+                script {
+                    kubernetesDeploy (configs: 'deploymentservice.yaml', kubeconfigId: 'k8sconfigpwd')
+                }
+            }
+        }
+        stage('Delete local docker image') {
+            steps {
+                script {
+                    sh '''IMAGE_ID=$(docker images --filter="reference=zhenekns/devops-integration" --quiet)
+                          echo current image id is: $IMAGE_ID
+                          docker rmi $IMAGE_ID -f'''
+                }
+            }
+        }
     }
 }
