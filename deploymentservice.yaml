@@ -11,6 +11,11 @@ spec:
     metadata:
       labels:
         app: spring-boot-k8s
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
     spec:
       containers:
         - name: spring-boot-k8s
