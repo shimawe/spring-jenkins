@@ -25,6 +25,11 @@ public class UserController {
         return userService.getById(id);
     }
 
+    @GetMapping("/youmadeeverythingcorrectly")
+    public String youMadeEverythingCorrectly() {
+        return "youMadeEverythingCorrectly, congratz!";
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void create(@RequestBody Person person) {
