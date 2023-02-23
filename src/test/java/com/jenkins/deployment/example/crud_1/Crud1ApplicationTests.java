@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 class Crud1ApplicationTests {
 
     @Test
-    void contextLoads() {
+     contextLoads() {
         log.info("Test case executing with new JENKINS BUILD!!!");
         assertThat(true).isTrue();
     }
